@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Banner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            position: relative; /* Set the body position to relative */
+            min-height: 100vh; /* Ensure the body fills the viewport */
+            background-color: rgb(245, 245, 245); /* Background color as light grey */
+        }
+
+        .banner {
+            background-color: #4281FF; /* Blue color */
+            padding: 13px; /* Padding of 20 pixels */
+            display: flex;
+            align-items: center;
+        }
+
+        .site-name {
+            color: #FFFFFF; /* Text color */
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 10px; /* Add some space between the text and the banner */
+            transition: color 0.3s; /* Add transition effect for color change */
+        }
+
+        .site-name:hover {
+            color: #ADC0FF;
+        }
+
+        /* Add styles for the AgeUKLogo image */
+        .age-uk-logo {
+            position: absolute;
+            bottom: 20px; /* Distance from the bottom of the screen */
+            right: 20px; /* Distance from the right of the screen */
+            width: 100px; /* Set the width of the image */
+            opacity: 0; /* Start with complete transparency */
+            transition: opacity 1.5s; /* Add transition effect for opacity change */
+        }
+
+        /* Add styles for the rounded squares */
+        .rounded-square {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            background-color: #FFFFFF; /* White background color */
+            border-radius: 10px; /* Rounded corners */
+            border: 2px solid rgb(160, 160, 160); /* Border color */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .center {
+            top: 50%; /* Position at the vertical center */
+            left: 50%; /* Position at the horizontal center */
+            transform: translate(-50%, -50%); /* Center the element */
+        }
+
+        .left {
+            top: 50%; /* Position at the vertical center */
+            left: calc(50% - 370px); /* Position to the left of the center */
+            transform: translate(-50%, -50%); /* Center the element */
+        }
+
+        .right {
+            top: 50%; /* Position at the vertical center */
+            left: calc(50% + 370px); /* Position to the right of the center */
+            transform: translate(-50%, -50%); /* Center the element */
+        }
+
+        /* Add styles for the "Community Events" text with animations */
+        .community-events {
+            position: absolute;
+            top: 15%; /* Position at the vertical center */
+            left: 50%; /* Position at the horizontal center */
+            transform: translate(-50%, -53%); /* Initial offset 3 pixels upwards */
+            color: #4b5467; /* Blue color */
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0; /* Start with complete transparency */
+            animation: fadeInAndMove 1.5s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInAndMove {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -83%); /* Offset 3 pixels upwards */
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%); /* Final position centered vertically */
+            }
+        }
+
+        /* Add styles for the text inside the rounded squares */
+        .text-inside {
+            text-align: center;
+            color: #4b5467; /* Blue color */
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Add styles for the image inside the rounded squares */
+        .image-inside {
+            border-radius: 10px; /* Rounded corners */
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add styles for the paragraph text */
+        .paragraph-text {
+            color: #6b6b6b; /* Grey color */
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Add styles for the buttons */
+        .buttons-container {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 0px;
+        }
+
+        .button {
+            background-color: #4281FF;
+            color: #FFFFFF;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif; /* Use the same font as the title */
+            transition: background-color 0.3s; /* Add transition effect for background color change */
+        }
+
+        .button:hover {
+            background-color: rgb(16, 71, 252);
+        }
+
+        /* Add styles for the "Home Website" text with animations */
+        .home-website {
+            position: absolute;
+            top: 4%;
+            right: 20px;
+            transform: translateY(-50%);
+            color: #ADC0FF; /* Light blue color */
+            font-size: 18px;
+            font-weight: normal;
+            cursor: pointer;
+            opacity: 0; /* Start with complete transparency */
+            animation: fadeIn 1.5s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -85%); /* Offset 3 pixels upwards */
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%); /* Final position centered vertically */
+            }
+        }
+
+        /* Add styles for the anchor tag (link) */
+        .home-website a {
+            text-decoration: none;
+            color: #ADC0FF; /* Light blue color */
+        }
+
+        .home-website a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+    <!-- Include Inter font from a web font provider -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="banner">
+        <span class="site-name">enns.net</span>
+        <!-- Add the "Home Website" text with the link -->
+        <div class="home-website">
+            <a href="https://www.ageuk.org.uk/birmingham/" target="_blank">Home Website</a>
+        </div>
+    </div>
+    <!-- Add the AgeUKLogo image -->
+    <img class="age-uk-logo" src="img/AgeUKLogo.png" alt="Age UK Logo">
+    
+    <!-- Add the "Community Events" text -->
+    <div class="community-events">Community Events</div>
+    
+    <!-- Add the rounded squares -->
+    <div class="rounded-square center">
+        <div class="text-inside">Event Example 2</div>
+        <p class="paragraph-text">This is an example of a community event. A Community event is an event, and this is a long block of text just to fill up this box. Usually, a description of the event, along with some links, could possibly go here!</p>
+        <img class="image-inside" src="img/ExampleImg.png" alt="Image 1">
+        <div class="buttons-container">
+            <button class="button">Give Feedback</button>
+            <button class="button">View Post</button>
+        </div>
+    </div>
+    <div class="rounded-square left">
+        <div class="text-inside">Event Example</div>
+        <p class="paragraph-text">This is an example of a community event. A Community event is an event, and this is a long block of text just to fill up this box. Usually, a description of the event, along with some links, could possibly go here!</p>
+        <img class="image-inside" src="img/ExampleImg.png" alt="Image 2">
+        <div class="buttons-container">
+            <button class="button">Give Feedback</button>
+            <button class="button">View Post</button>
+        </div>
+    </div>
+    <div class="rounded-square right">
+        <div class="text-inside">Event Example 3</div>
+        <p class="paragraph-text">This is an example of a community event. A Community event is an event, and this is a long block of text just to fill up this box. Usually, a description of the event, along with some links, could possibly go here!</p>
+        <img class="image-inside" src="img/ExampleImg.png" alt="Image 3">
+        <div class="buttons-container">
+            <button class="button">Give Feedback</button>
+            <button class="button">View Post</button>
+        </div>
+    </div>
+    
+    <script>
+        // After the page loads, set the opacity to 1 to trigger the transition
+        window.addEventListener('load', function() {
+            const ageUKLogo = document.querySelector('.age-uk-logo');
+            const communityEvents = document.querySelector('.community-events');
+            const homeWebsite = document.querySelector('.home-website');
+            
+            ageUKLogo.style.opacity = 1;
+            
+            // Set timeout to delay the fade-in effect for the text elements
+            setTimeout(function() {
+                communityEvents.style.opacity = 1;
+                homeWebsite.style.opacity = 1;
+            }, 500); // Adjust the delay (milliseconds) as needed
+        });
+    </script>
+</body>
+</html>
